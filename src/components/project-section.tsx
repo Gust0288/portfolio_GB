@@ -21,14 +21,14 @@ export function ProjectSection() {
           Projects
         </h2>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          Three projects — two of them running in production.
+          Four projects — two of them running in production.
         </p>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3"
+          className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2"
         >
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />

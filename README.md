@@ -18,7 +18,7 @@ I keep the tone honest, concrete and evidence-based: shipped projects, named org
 
 ## Current features
 
-- **Project section** — three case-study cards rendered from a single typed data source, each in a problem → solution → outcome format with tech badges, status badge (live / in development) and external links (live demo, GitHub, App Store, Google Play).
+- **Project section** — four case-study cards rendered from a single typed data source, each in a problem → solution → outcome format with tech badges, status badge (live / in development) and external links (live demo, GitHub, App Store, Google Play).
 - **Typed project data model** (`src/data/projects.ts`) — when I add a project, I add one object; no component changes needed.
 - **Discreet motion** — staggered entrance on cards, hover lift, with `prefers-reduced-motion` respected.
 - **Accessible markup** — semantic sections, description lists, labelled lists and real links (I'm targeting WCAG 2.1 AA).

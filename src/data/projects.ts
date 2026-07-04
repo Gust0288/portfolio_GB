@@ -88,4 +88,28 @@ export const projects: Project[] = [
     ],
     status: "in-development",
   },
+  {
+    slug: "jarvis-assistant",
+    title: "JARVIS — Local-First Desktop AI Assistant",
+    summary:
+      "Voice-controlled desktop AI assistant for macOS with a holographic-style UI — runs on local models via Ollama. Personal project.",
+    problem:
+      "Cloud AI assistants send everything you say to third parties and can't act on your machine — your calendar, notes and apps are out of reach.",
+    solution:
+      "An Electron + React desktop app backed by a local Node.js tool server. Local Ollama models with streaming responses and a memory system that extracts and recalls facts across sessions. Whisper push-to-talk voice input, text-to-speech with an amplitude-reactive reactor animation, a Spotlight-style ⌥Space quick-ask overlay, and macOS integrations (Calendar, Notes, app launching, weather, web search) — with confirmation required before any write action.",
+    outcome:
+      "In active development and running as a daily assistant on my own machine. Everything privacy-sensitive stays local.",
+    tech: [
+      "React",
+      "Vite",
+      "Electron",
+      "Node.js",
+      "Ollama",
+      "Whisper",
+      "Web Audio API",
+    ],
+    image: "/images/projects/jarvis.svg",
+    links: [{ label: "GitHub", url: "https://github.com/Gust0288/Jarvis" }],
+    status: "in-development",
+  },
 ];
