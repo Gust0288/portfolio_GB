@@ -6,14 +6,14 @@ const experience = [
     org: "Awork A/S",
     period: "Jan – May 2026",
     description:
-      "Case management system for a Danish public authority — PHP/Laravel backend with a Nuxt.js, TypeScript and Tailwind frontend.",
+      "Case management system for a Danish public authority, built with a PHP/Laravel backend and a Nuxt.js, TypeScript and Tailwind frontend.",
   },
   {
     role: "Junior Developer",
     org: "Social Vibes",
     period: "Oct 2024 – Aug 2025",
     description:
-      "Built the IBDI healthcare app and the Social Vibes app with Angular 19, Ionic and Neo4j — IBDI shipped to both app stores.",
+      "Built the IBDI healthcare app and the Social Vibes app with Angular 19, Ionic and Neo4j. IBDI shipped to both app stores.",
   },
   {
     role: "Frontend Intern",
@@ -26,12 +26,12 @@ const experience = [
 const education = [
   {
     degree: "Web Development (PBA)",
-    school: "KEA — Copenhagen School of Design and Technology",
+    school: "KEA, Copenhagen School of Design and Technology",
     period: "Completed June 2026",
   },
   {
     degree: "Multimedia Design (AP)",
-    school: "KEA — Copenhagen School of Design and Technology",
+    school: "KEA, Copenhagen School of Design and Technology",
     period: "Completed 2024",
   },
 ];
@@ -54,7 +54,7 @@ export function AboutSection() {
             from KEA&apos;s Web Development programme (June 2026). I came into
             code through multimedia design, and the combination stuck: I care
             about how things look and feel, but I want to build the whole
-            thing — database, API and UI.
+            thing: database, API and UI.
           </p>
           <p>
             Most of what I know, I learned by shipping. At Social Vibes I went
@@ -66,7 +66,7 @@ export function AboutSection() {
           </p>
           <p>
             I&apos;m looking for a developer role in Copenhagen or elsewhere on
-            Zealand — and open to the wider Nordics — where I can keep shipping
+            Zealand, and open to the wider Nordics, where I can keep shipping
             real things with a team that takes both code quality and users
             seriously.
           </p>

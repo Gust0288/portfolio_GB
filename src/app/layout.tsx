@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gustav Bøgh — Web & Fullstack Developer",
+  title: "Gustav Bøgh, Web & Fullstack Developer",
   description:
-    "Fullstack developer in Copenhagen who ships — from a healthcare app in the App Store to a production portal for Danish Industry.",
+    "Fullstack developer in Copenhagen who ships: from a healthcare app in the App Store to a production portal for Danish Industry.",
 };
 
 export default function RootLayout({

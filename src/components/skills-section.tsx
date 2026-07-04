@@ -13,7 +13,7 @@ export function SkillsSection() {
           Skills
         </h2>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          What I actually work with — no padding.
+          What I actually work with. No padding.
         </p>
       </Reveal>
       <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">

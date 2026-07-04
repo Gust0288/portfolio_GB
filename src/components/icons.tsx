@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-// Brand icons  lucide-react removed these, so they live here as inline SVGs.
+// Brand icons: lucide-react removed these, so they live here as inline SVGs.
 export function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
