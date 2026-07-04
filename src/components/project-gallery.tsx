@@ -28,14 +28,14 @@ export function ProjectGallery({ title, images }: ProjectGalleryProps) {
     <Dialog onOpenChange={(open) => open && setIndex(0)}>
       <DialogTrigger
         aria-label={`Open image gallery for ${title}`}
-        className="group/gallery relative block aspect-video w-full cursor-zoom-in overflow-hidden outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+        className="group/gallery relative block aspect-video w-full cursor-zoom-in overflow-hidden outline-none focus-visible:ring-3 focus-visible:ring-ring/50 bg-muted"
       >
         <Image
           src={images[0]}
           alt={`Screenshot of ${title}`}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover transition-transform duration-500 ease-out group-hover/gallery:scale-[1.04]"
+          className="object-contain transition-transform duration-500 ease-out group-hover/gallery:scale-[1.04]"
         />
         <span className="absolute right-3 bottom-3 inline-flex items-center gap-1.5 rounded-full bg-background/85 px-2.5 py-1 text-xs font-medium text-foreground opacity-0 backdrop-blur transition-opacity duration-300 group-hover/gallery:opacity-100 group-focus-visible/gallery:opacity-100">
           <ZoomIn className="size-3.5" aria-hidden="true" />
