@@ -57,7 +57,11 @@ export const projects: Project[] = [
     outcome:
       "Published in both the App Store and Google Play. Built at the startup Social Vibes, where I led frontend development and built the data flow between frontend and backend.",
     tech: ["Angular", "TypeScript", "Ionic", "SQL", "Neo4j"],
-    images: ["/images/projects/ibdi.svg"],
+    images: [
+    "/images/projects/ibdi/ibdi-1.png",
+    "/images/projects/ibdi/ibdi-2.png",
+    "/images/projects/ibdi/ibdi-3.png",
+  ],
     links: [
       {
         label: "App Store",

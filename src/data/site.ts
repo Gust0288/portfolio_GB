@@ -2,7 +2,7 @@
 export const site = {
   name: "Gustav Bøgh",
   role: "Web & Fullstack Developer",
-  location: "Copenhagen, Denmark",
+  location: "Copenhagen & Zealand, Denmark",
   valueStatement:
     "Fullstack developer who ships — from a healthcare app in the App Store to a production portal for Danish Industry.",
   email: "gustavbogh@gmail.com",

@@ -65,9 +65,10 @@ export function AboutSection() {
             membership portal that Dansk Industri runs in production.
           </p>
           <p>
-            I&apos;m looking for a developer role in Copenhagen or the wider
-            Nordics where I can keep shipping real things with a team that
-            takes both code quality and users seriously.
+            I&apos;m looking for a developer role in Copenhagen or elsewhere on
+            Zealand — and open to the wider Nordics — where I can keep shipping
+            real things with a team that takes both code quality and users
+            seriously.
           </p>
         </Reveal>
         <Reveal delay={0.1} className="space-y-8">
