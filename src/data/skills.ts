@@ -16,6 +16,8 @@ export const skillGroups: SkillGroup[] = [
       "Next.js",
       "Nuxt.js",
       "Angular",
+      "Vite",
+      "Electron",
       "UX/UI principles",
     ],
   },
@@ -29,6 +31,11 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Tools & methods",
-    skills: ["Git", "CI/CD", "REST APIs"],
+    skills: [
+      "Git",
+      "CI/CD",
+      "REST APIs",
+      "LLM integration (Ollama, Whisper, TTS)",
+    ],
   },
 ];
