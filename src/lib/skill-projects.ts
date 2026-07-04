@@ -1,3 +1,4 @@
+import { educations, type Education } from "@/data/education";
 import { projects, type Project } from "@/data/projects";
 import type { Skill } from "@/data/skills";
 
@@ -15,5 +16,13 @@ export function projectsUsingSkill(skill: Skill): Project[] {
     project.tech.some((tech) =>
       keywords.some((keyword) => tech.toLowerCase().includes(keyword))
     )
+  );
+}
+
+// Finder de uddannelser en skill stammer fra.
+export function educationsForSkill(skill: Skill): Education[] {
+  if (!skill.education?.length) return [];
+  return educations.filter((education) =>
+    skill.education!.includes(education.slug)
   );
 }

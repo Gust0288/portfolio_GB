@@ -6,6 +6,8 @@ export type Skill = {
    * Udeladt: navnet uden parentes bruges. Tom liste: ingen projektkobling.
    */
   keywords?: string[];
+  /** Uddannelser (slugs fra education.ts) skillen stammer fra. */
+  education?: string[];
 };
 
 export type SkillGroup = {
@@ -17,17 +19,33 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML", keywords: [] },
-      { name: "CSS (Tailwind, Bootstrap)", keywords: ["tailwind", "bootstrap", "css"] },
-      { name: "JavaScript", keywords: [] },
+      {
+        name: "HTML",
+        keywords: [],
+        education: ["multimedia-design-ap", "web-development-pba"],
+      },
+      {
+        name: "CSS (Tailwind, Bootstrap)",
+        keywords: ["tailwind", "bootstrap", "css"],
+        education: ["multimedia-design-ap", "web-development-pba"],
+      },
+      {
+        name: "JavaScript",
+        keywords: [],
+        education: ["multimedia-design-ap", "web-development-pba"],
+      },
       { name: "TypeScript" },
       { name: "React" },
-      { name: "Next.js" },
-      { name: "Nuxt.js" },
+      { name: "Next.js", education: ["web-development-pba"] },
+      { name: "Nuxt.js", education: ["web-development-pba"] },
       { name: "Angular" },
       { name: "Vite" },
       { name: "Electron" },
-      { name: "UX/UI principles", keywords: [] },
+      {
+        name: "UX/UI principles",
+        keywords: [],
+        education: ["multimedia-design-ap"],
+      },
     ],
   },
   {
@@ -36,26 +54,37 @@ export const skillGroups: SkillGroup[] = [
       { name: "Node.js" },
       { name: "Express" },
       { name: "Python (Flask)" },
-      { name: "PHP (Laravel)", keywords: ["laravel", "php"] },
+      {
+        name: "PHP (Laravel)",
+        keywords: ["laravel", "php"],
+        education: ["web-development-pba"],
+      },
     ],
   },
   {
     title: "Databases",
     skills: [
       { name: "PostgreSQL" },
-      { name: "MySQL" },
-      { name: "SQLite" },
-      { name: "MongoDB" },
+      { name: "MySQL", education: ["web-development-pba"] },
+      { name: "SQLite", education: ["web-development-pba"] },
+      { name: "MongoDB", education: ["web-development-pba"] },
       { name: "Neo4j" },
     ],
   },
   {
     title: "Tools & methods",
     skills: [
-      { name: "Git", keywords: [] },
+      {
+        name: "Git",
+        keywords: [],
+        education: ["web-development-pba", "multimedia-design-ap"],
+      },
       { name: "CI/CD", keywords: ["github actions", "ci/cd"] },
-      { name: "REST APIs", keywords: [] },
-      { name: "LLM integration (Ollama, Whisper, TTS)", keywords: ["ollama", "whisper"] },
+      { name: "REST APIs", keywords: [], education: ["web-development-pba"] },
+      {
+        name: "LLM integration (Ollama, Whisper, TTS)",
+        keywords: ["ollama", "whisper"],
+      },
     ],
   },
 ];

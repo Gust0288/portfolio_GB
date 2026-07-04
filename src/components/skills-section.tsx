@@ -12,7 +12,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { skillGroups, type Skill } from "@/data/skills";
-import { projectsUsingSkill } from "@/lib/skill-projects";
+import { educationsForSkill, projectsUsingSkill } from "@/lib/skill-projects";
 import { cn } from "@/lib/utils";
 
 const listVariants: Variants = {
@@ -31,9 +31,11 @@ const itemVariants: Variants = {
 };
 
 function SkillBadge({ skill }: { skill: Skill }) {
-  const linked = projectsUsingSkill(skill);
+  const linkedProjects = projectsUsingSkill(skill);
+  const linkedEducations = educationsForSkill(skill);
+  const linkCount = linkedProjects.length + linkedEducations.length;
 
-  if (linked.length === 0) {
+  if (linkCount === 0) {
     return <Badge variant="outline">{skill.name}</Badge>;
   }
 
@@ -48,28 +50,52 @@ function SkillBadge({ skill }: { skill: Skill }) {
         {skill.name}
         <span
           className="rounded-full bg-primary/10 px-1.5 text-[10px] font-semibold text-primary tabular-nums"
-          aria-label={`used in ${linked.length} ${linked.length === 1 ? "project" : "projects"}`}
+          aria-label={`${linkCount} ${linkCount === 1 ? "reference" : "references"}`}
         >
-          {linked.length}
+          {linkCount}
         </span>
       </PopoverTrigger>
-      <PopoverContent className="w-52 p-3">
-        <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          Used in
-        </p>
-        <ul className="mt-1 space-y-1">
-          {linked.map((project) => (
-            <li key={project.slug}>
-              <PopoverClose
-                nativeButton={false}
-                render={<a href={`#${project.slug}`} />}
-                className="text-sm text-foreground underline-offset-4 hover:text-primary hover:underline"
-              >
-                {project.shortTitle ?? project.title}
-              </PopoverClose>
-            </li>
-          ))}
-        </ul>
+      <PopoverContent className="w-56 p-3">
+        {linkedProjects.length > 0 && (
+          <div>
+            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+              Used in
+            </p>
+            <ul className="mt-1 space-y-1">
+              {linkedProjects.map((project) => (
+                <li key={project.slug}>
+                  <PopoverClose
+                    nativeButton={false}
+                    render={<a href={`#${project.slug}`} />}
+                    className="text-sm text-foreground underline-offset-4 hover:text-primary hover:underline"
+                  >
+                    {project.shortTitle ?? project.title}
+                  </PopoverClose>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {linkedEducations.length > 0 && (
+          <div>
+            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+              From my education
+            </p>
+            <ul className="mt-1 space-y-1">
+              {linkedEducations.map((education) => (
+                <li key={education.slug}>
+                  <PopoverClose
+                    nativeButton={false}
+                    render={<a href={`#edu-${education.slug}`} />}
+                    className="text-sm text-foreground underline-offset-4 hover:text-primary hover:underline"
+                  >
+                    {education.degree}
+                  </PopoverClose>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </PopoverContent>
     </Popover>
   );

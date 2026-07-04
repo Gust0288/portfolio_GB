@@ -1,4 +1,13 @@
+import { Info } from "lucide-react";
+
 import { Reveal } from "@/components/reveal";
+import { Badge } from "@/components/ui/badge";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { educations } from "@/data/education";
 
 const experience = [
   {
@@ -20,19 +29,6 @@ const experience = [
     org: "Social Vibes",
     period: "Aug – Oct 2024",
     description: "First step into professional development work.",
-  },
-];
-
-const education = [
-  {
-    degree: "Web Development (PBA)",
-    school: "KEA, Copenhagen School of Design and Technology",
-    period: "Completed June 2026",
-  },
-  {
-    degree: "Multimedia Design (AP)",
-    school: "KEA, Copenhagen School of Design and Technology",
-    period: "Completed 2024",
   },
 ];
 
@@ -95,12 +91,48 @@ export function AboutSection() {
               Education
             </h3>
             <ol className="mt-3 space-y-3">
-              {education.map((item) => (
-                <li key={item.degree}>
-                  <p className="font-medium text-foreground">{item.degree}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {item.school} · {item.period}
-                  </p>
+              {educations.map((item) => (
+                <li
+                  key={item.slug}
+                  id={`edu-${item.slug}`}
+                  className="-m-2 scroll-mt-24 rounded-lg p-2 target:ring-2 target:ring-primary/50"
+                >
+                  <Popover>
+                    <PopoverTrigger
+                      openOnHover
+                      delay={150}
+                      className="block w-full cursor-pointer rounded-md text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+                    >
+                      <span className="flex items-center gap-1.5 font-medium text-foreground">
+                        <span className="decoration-primary/50 underline-offset-4 hover:underline hover:decoration-dotted">
+                          {item.degree}
+                        </span>
+                        <Info
+                          className="size-3.5 text-muted-foreground"
+                          aria-hidden="true"
+                        />
+                      </span>
+                      <span className="block text-sm text-muted-foreground">
+                        {item.school} · {item.period}
+                      </span>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-80 p-4" side="top">
+                      <p className="font-medium">{item.degree}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {item.school} · {item.period}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                      <ul className="mt-3 flex flex-wrap gap-1.5">
+                        {item.topics.map((topic) => (
+                          <li key={topic}>
+                            <Badge variant="outline">{topic}</Badge>
+                          </li>
+                        ))}
+                      </ul>
+                    </PopoverContent>
+                  </Popover>
                 </li>
               ))}
             </ol>
