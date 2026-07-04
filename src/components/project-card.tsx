@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { motion, type Variants } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
+import { ProjectGallery } from "@/components/project-gallery";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,28 +17,24 @@ import {
 } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
 
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  index = 0,
+}: {
+  project: Project;
+  index?: number;
+}) {
   return (
-    <motion.article variants={cardVariants} whileHover={{ y: -4 }} className="h-full">
-      <Card className="h-full pt-0 transition-shadow hover:shadow-lg">
-        <div className="relative aspect-video">
-          <Image
-            src={project.image}
-            alt={`Screenshot of ${project.title}`}
-            fill
-            sizes="(min-width: 1024px) 33vw, 100vw"
-            className="object-cover"
-          />
-        </div>
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-64px" }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: (index % 2) * 0.1 }}
+      whileHover={{ y: -4 }}
+      className="h-full"
+    >
+      <Card className="h-full pt-0 transition-[box-shadow,--tw-ring-color] duration-300 hover:shadow-lg hover:ring-primary/35">
+        <ProjectGallery title={project.title} images={project.images} />
         <CardHeader>
           <CardTitle>{project.title}</CardTitle>
           <CardDescription>{project.summary}</CardDescription>

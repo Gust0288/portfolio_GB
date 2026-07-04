@@ -5,6 +5,7 @@ import { Mail } from "lucide-react";
 import { z } from "zod";
 
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -48,18 +49,21 @@ export function ContactSection() {
 
   return (
     <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-24 py-16 sm:py-24">
-      <h2
-        id="contact-heading"
-        className="text-2xl font-semibold tracking-tight sm:text-3xl"
-      >
-        Contact
-      </h2>
-      <p className="mt-2 max-w-2xl text-muted-foreground">
-        Want to talk about a role or a project? Write me a message or reach me
-        directly — I usually reply within a day.
-      </p>
+      <Reveal>
+        <h2
+          id="contact-heading"
+          className="text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
+          Contact
+        </h2>
+        <p className="mt-2 max-w-2xl text-muted-foreground">
+          Want to talk about a role or a project? Write me a message or reach me
+          directly — I usually reply within a day.
+        </p>
+      </Reveal>
       <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        <Reveal>
+          <form onSubmit={handleSubmit} noValidate className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="contact-name">Name</Label>
             <Input
@@ -108,12 +112,13 @@ export function ContactSection() {
               </p>
             )}
           </div>
-          <Button type="submit">Send message</Button>
-          <p className="text-xs text-muted-foreground">
-            Opens your e-mail client with the message prefilled.
-          </p>
-        </form>
-        <div className="space-y-3">
+            <Button type="submit">Send message</Button>
+            <p className="text-xs text-muted-foreground">
+              Opens your e-mail client with the message prefilled.
+            </p>
+          </form>
+        </Reveal>
+        <Reveal delay={0.1} className="space-y-3">
           <h3 className="text-sm font-medium tracking-wide text-foreground uppercase">
             Direct
           </h3>
@@ -150,7 +155,7 @@ export function ContactSection() {
               </a>
             </li>
           </ul>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

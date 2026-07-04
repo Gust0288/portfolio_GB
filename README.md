@@ -18,7 +18,9 @@ I keep the tone honest, concrete and evidence-based: shipped projects, named org
 
 ## Current features
 
+- **Full-screen hero** — my name, role and value statement fill the first viewport, with an availability badge and a scroll cue.
 - **Project section** — four case-study cards rendered from a single typed data source, each in a problem → solution → outcome format with tech badges, status badge (live / in development) and external links (live demo, GitHub, App Store, Google Play).
+- **Image gallery per project** — each project holds a list of screenshots; clicking the cover opens a lightbox with keyboard navigation. Adding a picture is one line in the data file.
 - **Typed project data model** (`src/data/projects.ts`) — when I add a project, I add one object; no component changes needed.
 - **Discreet motion** — staggered entrance on cards, hover lift, with `prefers-reduced-motion` respected.
 - **Accessible markup** — semantic sections, description lists, labelled lists and real links (I'm targeting WCAG 2.1 AA).
