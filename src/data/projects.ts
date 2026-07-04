@@ -2,6 +2,7 @@
 export type Project = {
   slug: string;
   title: string;
+  shortTitle?: string; // kort navn til popovers/links, falder tilbage til title
   summary: string; // 1-2 linjer til kortet
   problem: string;
   solution: string;
@@ -16,6 +17,7 @@ export const projects: Project[] = [
   {
     slug: "di-membership-portal",
     title: "Bachelor Project: Digital Membership Portal for Dansk Industri (DI)",
+    shortTitle: "DI Membership Portal",
     summary:
       "My final bachelor project (PBA Web Development, KEA, June 2026). A self-service membership portal for Dansk Industri, replacing a manual phone-based signup process, built end-to-end and running in production.",
     problem:
@@ -48,6 +50,7 @@ export const projects: Project[] = [
   {
     slug: "ibdi-healthcare-app",
     title: "IBDI, Healthcare App (iOS & Android)",
+    shortTitle: "IBDI",
     summary:
       "Published healthcare app for people with chronic bowel disease (IBD), available in both the App Store and Google Play.",
     problem:
@@ -77,6 +80,7 @@ export const projects: Project[] = [
   {
     slug: "car-rental",
     title: "Car Rental, Booking Platform",
+    shortTitle: "Car Rental",
     summary:
       "Fullstack car rental booking platform, a personal project currently in development.",
     problem:
@@ -95,6 +99,7 @@ export const projects: Project[] = [
   {
     slug: "jarvis-assistant",
     title: "JARVIS, Local-First Desktop AI Assistant",
+    shortTitle: "JARVIS",
     summary:
       "Voice-controlled desktop AI assistant for macOS with a holographic-style UI. Runs on local models via Ollama. Personal project.",
     problem:

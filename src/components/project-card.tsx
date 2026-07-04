@@ -26,12 +26,13 @@ export function ProjectCard({
 }) {
   return (
     <motion.article
+      id={project.slug}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-64px" }}
       transition={{ duration: 0.5, ease: "easeOut", delay: (index % 2) * 0.1 }}
       whileHover={{ y: -4 }}
-      className="h-full"
+      className="h-full scroll-mt-24 [&:target>div]:ring-2 [&:target>div]:ring-primary/60"
     >
       <Card className="h-full pt-0 transition-[box-shadow,--tw-ring-color] duration-300 hover:shadow-lg hover:ring-primary/35">
         <ProjectGallery title={project.title} images={project.images} />
