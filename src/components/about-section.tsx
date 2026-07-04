@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/reveal";
+
 const experience = [
   {
     role: "Fullstack Developer Intern",
@@ -37,14 +39,16 @@ const education = [
 export function AboutSection() {
   return (
     <section id="about" aria-labelledby="about-heading" className="scroll-mt-24 py-16 sm:py-24">
-      <h2
-        id="about-heading"
-        className="text-2xl font-semibold tracking-tight sm:text-3xl"
-      >
-        About
-      </h2>
+      <Reveal>
+        <h2
+          id="about-heading"
+          className="text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
+          About
+        </h2>
+      </Reveal>
       <div className="mt-6 grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <div className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
+        <Reveal className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
           <p>
             I&apos;m a fullstack developer from Copenhagen, freshly graduated
             from KEA&apos;s Web Development programme (June 2026). I came into
@@ -65,8 +69,8 @@ export function AboutSection() {
             Nordics where I can keep shipping real things with a team that
             takes both code quality and users seriously.
           </p>
-        </div>
-        <div className="space-y-8">
+        </Reveal>
+        <Reveal delay={0.1} className="space-y-8">
           <div>
             <h3 className="text-sm font-medium tracking-wide text-foreground uppercase">
               Experience
@@ -100,7 +104,7 @@ export function AboutSection() {
               ))}
             </ol>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ export type Project = {
   solution: string;
   outcome: string;
   tech: string[];
-  image: string; // screenshot — påkrævet fra start
+  images: string[]; // screenshots — første billede er cover, resten vises i galleriet
   links: { label: string; url: string }[];
   status?: "live" | "in-development";
 };
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       "Docker",
       "Render",
     ],
-    image: "/images/projects/di-portal.svg",
+    images: ["/images/projects/di-portal.svg"],
     links: [
       { label: "Live", url: "https://di-portal-frontend.onrender.com" },
       {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     outcome:
       "Published in both the App Store and Google Play. Built at the startup Social Vibes, where I led frontend development and built the data flow between frontend and backend.",
     tech: ["Angular", "TypeScript", "Ionic", "SQL", "Neo4j"],
-    image: "/images/projects/ibdi.svg",
+    images: ["/images/projects/ibdi.svg"],
     links: [
       {
         label: "App Store",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     outcome:
       "In active development — the core booking flow and admin panel are being built out.",
     tech: ["React", "Chakra UI", "Express.js", "Node.js", "PostgreSQL"],
-    image: "/images/projects/car-rental.svg",
+    images: ["/images/projects/car-rental.svg"],
     links: [
       { label: "GitHub", url: "https://github.com/Gust0288/car-rental-prj" },
     ],
@@ -108,7 +108,7 @@ export const projects: Project[] = [
       "Whisper",
       "Web Audio API",
     ],
-    image: "/images/projects/jarvis.svg",
+    images: ["/images/projects/jarvis.svg"],
     links: [{ label: "GitHub", url: "https://github.com/Gust0288/Jarvis" }],
     status: "in-development",
   },
