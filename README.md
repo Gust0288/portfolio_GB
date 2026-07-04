@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gustav Bøgh — Portfolio
 
-## Getting Started
+Hi, I'm Gustav — a web & fullstack developer in Copenhagen. This is my personal portfolio, where I present my shipped, real-world work — a production membership portal for Dansk Industri and a published healthcare app — to potential employers in Denmark and the Nordics.
 
-First, run the development server:
+I keep the tone honest, concrete and evidence-based: shipped projects, named organisations and live links over buzzwords.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech stack
+
+| Part | Choice |
+|---|---|
+| Framework | Next.js 16 (App Router, `src/` dir, Turbopack) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Components | shadcn/ui (Base UI) |
+| Animation | Motion (Framer Motion) — used sparingly |
+| Content | Typed TS config (`src/data/`) — no CMS |
+| Deployment | Vercel |
+
+## Current features
+
+- **Project section** — three case-study cards rendered from a single typed data source, each in a problem → solution → outcome format with tech badges, status badge (live / in development) and external links (live demo, GitHub, App Store, Google Play).
+- **Typed project data model** (`src/data/projects.ts`) — when I add a project, I add one object; no component changes needed.
+- **Discreet motion** — staggered entrance on cards, hover lift, with `prefers-reduced-motion` respected.
+- **Accessible markup** — semantic sections, description lists, labelled lists and real links (I'm targeting WCAG 2.1 AA).
+
+## Planned features
+
+- **Hero** — my name, role, location and one value statement, visible above the fold.
+- **Skills** — grouped: Frontend / Backend / Databases / Tools.
+- **About** — my background, learning journey and what I'm looking for.
+- **Contact** — Zod-validated form plus my direct e-mail, GitHub and LinkedIn links on every page.
+- **CV download** (PDF).
+- **Dark mode** with system-preference detection.
+- **Deployment on Vercel** with a custom domain.
+- **SEO & analytics** — metadata API, `sitemap.ts`, `robots.ts`, OG images, GDPR-friendly analytics (Plausible or Umami).
+- **AI assistant** (on hold) — grounded chat about my portfolio via the Vercel AI SDK.
+
+## Project structure
+
+```
+src/
+├── app/                  # App Router: layout, pages, global styles
+│   ├── layout.tsx        # Root layout, fonts, metadata
+│   └── page.tsx          # Front page composing the sections
+├── components/
+│   ├── project-card.tsx     # One project case-study card
+│   ├── project-section.tsx  # Renders all projects from data
+│   └── ui/                  # shadcn/ui primitives (button, card, badge)
+├── data/
+│   └── projects.ts       # Typed project data — single source of truth
+└── lib/
+    └── utils.ts          # Shared helpers (cn)
+public/
+└── images/projects/      # Project screenshots
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requires Node.js 20+.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build   # production build
+npm run lint    # lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How I work
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I develop new features on feature branches (e.g. `feature/hero-section`), test them (build + browser verification), and only then merge to `main`.
