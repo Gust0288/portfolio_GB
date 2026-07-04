@@ -6,7 +6,7 @@ import { SkillsSection } from "@/components/skills-section";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-6 pb-16 sm:pb-24">
+    <main id="top" className="mx-auto w-full max-w-6xl flex-1 px-6 pb-16 sm:pb-24">
       <HeroSection />
       <ProjectSection />
       <SkillsSection />
