@@ -15,15 +15,15 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "di-membership-portal",
-    title: "Digital Membership Portal — Dansk Industri (DI)",
+    title: "Bachelor Project — Digital Membership Portal for Dansk Industri (DI)",
     summary:
-      "Self-service membership portal for Dansk Industri, replacing a manual phone-based signup process. Built end-to-end as my bachelor project.",
+      "My final bachelor project (PBA Web Development, KEA, June 2026). A self-service membership portal for Dansk Industri, replacing a manual phone-based signup process — built end-to-end and running in production.",
     problem:
       "Dansk Industri's membership signup was a manual, phone-based process — slow for applicants and time-consuming for staff.",
     solution:
       "A self-service portal with a dynamic wizard flow and automatic CVR lookup, plus a JWT-protected admin panel for case handling. Contract-first REST API and a full CI/CD pipeline with testing, vulnerability scanning and automated deploys.",
     outcome:
-      "A production portal running live for Dansk Industri. I built the entire stack — frontend, backend, database and pipeline.",
+      "Delivered as my final bachelor project and running live in production for Dansk Industri. I designed and built the entire stack — frontend, backend, database and CI/CD pipeline — from scratch.",
     tech: [
       "React",
       "TypeScript",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     problem:
       "Cloud AI assistants send everything you say to third parties and can't act on your machine — your calendar, notes and apps are out of reach.",
     solution:
-      "An Electron + React desktop app backed by a local Node.js tool server. Local Ollama models with streaming responses and a memory system that extracts and recalls facts across sessions. Whisper push-to-talk voice input, text-to-speech with an amplitude-reactive reactor animation, a Spotlight-style ⌥Space quick-ask overlay, and macOS integrations (Calendar, Notes, app launching, weather, web search) — with confirmation required before any write action.",
+      "An Electron + React desktop app backed by a local Node.js tool server. Local Ollama models with streaming responses and a memory system that extracts and recalls facts across sessions. Whisper push-to-talk voice input, text-to-speech with an amplitude-reactive reactor animation, a Spotlight-style ⌥Space quick-ask overlay, and macOS integrations (Calendar, Notes, app launching, weather, web search)  with confirmation required before any write action.",
     outcome:
       "In active development and running as a daily assistant on my own machine. Everything privacy-sensitive stays local.",
     tech: [

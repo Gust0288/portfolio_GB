@@ -55,7 +55,7 @@ export function ProjectGallery({ title, images }: ProjectGalleryProps) {
           <Image
             key={images[index]}
             src={images[index]}
-            alt={`Screenshot ${index + 1} of ${count} — ${title}`}
+            alt={`Screenshot ${index + 1} of ${count}  ${title}`}
             fill
             sizes="(min-width: 640px) 56rem, 100vw"
             className="object-contain"

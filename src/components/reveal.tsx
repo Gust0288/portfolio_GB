@@ -9,7 +9,7 @@ type RevealProps = {
   className?: string;
 };
 
-// Shared scroll-reveal wrapper — fades content up when it enters the viewport.
+// Shared scroll-reveal wrapper  fades content up when it enters the viewport.
 export function Reveal({ children, delay = 0, className }: RevealProps) {
   return (
     <motion.div

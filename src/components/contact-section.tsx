@@ -43,7 +43,7 @@ export function ContactSection() {
     setErrors({});
     const { name, email, message } = result.data;
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const body = encodeURIComponent(`${message}\n\n ${name} (${email})`);
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
   }
 

@@ -13,7 +13,7 @@ export function ProjectSection() {
           Projects
         </h2>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          Four projects — two of them running in production.
+          Four projects  two of them running in production.
         </p>
       </Reveal>
       <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
