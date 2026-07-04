@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "Docker",
       "Render",
     ],
-    images: ["/images/projects/di-portal.svg"],
+    images: ["/images/projects/di/di-1.png", "/images/projects/di/di-2.png"],
     links: [
       { label: "Live", url: "https://di-portal-frontend.onrender.com" },
       {
@@ -117,7 +117,11 @@ export const projects: Project[] = [
       "Whisper",
       "Web Audio API",
     ],
-    images: ["/images/projects/jarvis.svg"],
+    images: [
+      "/images/projects/jarvis/jarvis-1.png",
+      "/images/projects/jarvis/jarvis-2.png",
+      "/images/projects/jarvis/jarvis-3.png",
+    ],
     links: [{ label: "GitHub", url: "https://github.com/Gust0288/Jarvis" }],
     status: "in-development",
   },
