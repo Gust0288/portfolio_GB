@@ -2,6 +2,11 @@
 export const site = {
   name: "Gustav Bøgh",
   role: "Web & Fullstack Developer",
+  roles: [
+    "Web & Fullstack Developer",
+    "Frontend-focused Developer",
+    "Backend-focused Developer",
+  ],
   location: "Copenhagen & Zealand, Denmark",
   valueStatement:
     "Fullstack developer who ships: from a healthcare app in the App Store to a production portal for Danish Industry.",
