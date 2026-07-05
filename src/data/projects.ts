@@ -37,7 +37,13 @@ export const projects: Project[] = [
       "Docker",
       "Render",
     ],
-    images: ["/images/projects/di/di-1.png", "/images/projects/di/di-2.png"],
+    images: [
+      "/images/projects/di/di-1.png",
+      "/images/projects/di/di-2.png",
+      "/images/projects/di/di-3.png",
+      "/images/projects/di/di-4.png",
+      "/images/projects/di/di-5.png",
+    ],
     links: [
       { label: "Live", url: "https://di-portal-frontend.onrender.com" },
       {
