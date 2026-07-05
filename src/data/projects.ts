@@ -10,7 +10,7 @@ export type Project = {
   tech: string[];
   images: string[]; // screenshots, første billede er cover, resten vises i galleriet
   links: { label: string; url: string }[];
-  status?: "live" | "in-development";
+  status?: "live" | "completed" | "in-development";
 };
 
 export const projects: Project[] = [
@@ -88,13 +88,13 @@ export const projects: Project[] = [
     title: "Car Rental, Booking Platform",
     shortTitle: "Car Rental",
     summary:
-      "Fullstack car rental booking platform, a personal project currently in development.",
+      "Fullstack car rental booking platform, a completed personal project without a live deployment.",
     problem:
       "A personal project to practice building a complete booking system with real-world concerns: availability, reservations and admin tooling.",
     solution:
       "A fullstack booking platform where users browse cars, create reservations and manage their bookings, while admins manage the fleet through an admin panel.",
     outcome:
-      "In active development. The core booking flow and admin panel are being built out.",
+      "Finished as a personal project. The booking flow and admin panel are fully built, though it isn't deployed anywhere live right now.",
     tech: ["React", "Chakra UI", "Express.js", "Node.js", "PostgreSQL"],
     images: [
       "/images/projects/car-rental/car-rental-1.png",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     links: [
       { label: "GitHub", url: "https://github.com/Gust0288/car-rental-prj" },
     ],
-    status: "in-development",
+    status: "completed",
   },
   {
     slug: "jarvis-assistant",
