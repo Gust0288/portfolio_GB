@@ -48,26 +48,34 @@ export function ProjectCard({
           )}
         </CardHeader>
         <CardContent className="flex flex-1 flex-col gap-4">
-          <dl className="space-y-3 text-sm">
-            <div>
-              <dt className="text-xs font-medium tracking-wide text-foreground uppercase">
-                Problem
-              </dt>
-              <dd className="mt-1 text-muted-foreground">{project.problem}</dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium tracking-wide text-foreground uppercase">
-                Solution
-              </dt>
-              <dd className="mt-1 text-muted-foreground">{project.solution}</dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium tracking-wide text-foreground uppercase">
-                Outcome
-              </dt>
-              <dd className="mt-1 text-muted-foreground">{project.outcome}</dd>
-            </div>
-          </dl>
+          {(project.problem || project.solution || project.outcome) && (
+            <dl className="space-y-3 text-sm">
+              {project.problem && (
+                <div>
+                  <dt className="text-xs font-medium tracking-wide text-foreground uppercase">
+                    Problem
+                  </dt>
+                  <dd className="mt-1 text-muted-foreground">{project.problem}</dd>
+                </div>
+              )}
+              {project.solution && (
+                <div>
+                  <dt className="text-xs font-medium tracking-wide text-foreground uppercase">
+                    Solution
+                  </dt>
+                  <dd className="mt-1 text-muted-foreground">{project.solution}</dd>
+                </div>
+              )}
+              {project.outcome && (
+                <div>
+                  <dt className="text-xs font-medium tracking-wide text-foreground uppercase">
+                    Outcome
+                  </dt>
+                  <dd className="mt-1 text-muted-foreground">{project.outcome}</dd>
+                </div>
+              )}
+            </dl>
+          )}
           <ul className="mt-auto flex flex-wrap gap-1.5" aria-label="Technologies used">
             {project.tech.map((tech) => (
               <li key={tech}>
@@ -76,22 +84,24 @@ export function ProjectCard({
             ))}
           </ul>
         </CardContent>
-        <CardFooter className="gap-2">
-          {project.links.map((link) => (
-            <Button
-              key={link.url}
-              variant="outline"
-              size="sm"
-              nativeButton={false}
-              render={
-                <a href={link.url} target="_blank" rel="noopener noreferrer" />
-              }
-            >
-              {link.label}
-              <ArrowUpRight aria-hidden="true" />
-            </Button>
-          ))}
-        </CardFooter>
+        {project.links.length > 0 && (
+          <CardFooter className="gap-2">
+            {project.links.map((link) => (
+              <Button
+                key={link.url}
+                variant="outline"
+                size="sm"
+                nativeButton={false}
+                render={
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" />
+                }
+              >
+                {link.label}
+                <ArrowUpRight aria-hidden="true" />
+              </Button>
+            ))}
+          </CardFooter>
+        )}
       </Card>
     </motion.article>
   );

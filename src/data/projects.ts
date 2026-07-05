@@ -4,9 +4,9 @@ export type Project = {
   title: string;
   shortTitle?: string; // kort navn til popovers/links, falder tilbage til title
   summary: string; // 1-2 linjer til kortet
-  problem: string;
-  solution: string;
-  outcome: string;
+  problem?: string; // udelades for teaser-projekter der ikke er startet endnu
+  solution?: string;
+  outcome?: string;
   tech: string[];
   images: string[]; // screenshots, første billede er cover, resten vises i galleriet
   links: { label: string; url: string }[];
@@ -129,6 +129,32 @@ export const projects: Project[] = [
       "/images/projects/jarvis/jarvis-3.png",
     ],
     links: [{ label: "GitHub", url: "https://github.com/Gust0288/Jarvis" }],
+    status: "in-development",
+  },
+  {
+    slug: "personal-finance-api",
+    title: "Personal Finance API (.NET)",
+    shortTitle: "Finance API",
+    summary:
+      "An ASP.NET Core API for tracking spending, budgets and recurring expenses. My first .NET project, in the earliest stage.",
+    problem:
+      "I want my budgets and recurring expenses to live somewhere better than a spreadsheet, and I want a meaty, real domain to learn the .NET stack properly.",
+    solution:
+      "The plan: a REST API built with ASP.NET Core and EF Core on PostgreSQL. Accounts, categories, budgets and recurring expenses, JWT auth, and tests and CI from the first commit.",
+    tech: ["C#", "ASP.NET Core", "EF Core", "PostgreSQL"],
+    images: ["/images/projects/finance-api.svg"],
+    links: [],
+    status: "in-development",
+  },
+  {
+    slug: "csharp-project",
+    title: "Untitled C# Project",
+    shortTitle: "C# Project",
+    summary:
+      "A C#-focused project I'm working on. Not ready to show yet, but the reveal is coming.",
+    tech: ["C#", ".NET"],
+    images: ["/images/projects/csharp-teaser.svg"],
+    links: [],
     status: "in-development",
   },
 ];
