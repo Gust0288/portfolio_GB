@@ -17,6 +17,21 @@ import {
 } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
 
+const statusLabel: Record<NonNullable<Project["status"]>, string> = {
+  live: "Live",
+  completed: "Completed",
+  "in-development": "In development",
+};
+
+const statusVariant: Record<
+  NonNullable<Project["status"]>,
+  "default" | "secondary" | "outline"
+> = {
+  live: "default",
+  completed: "outline",
+  "in-development": "secondary",
+};
+
 export function ProjectCard({
   project,
   index = 0,
@@ -41,8 +56,8 @@ export function ProjectCard({
           <CardDescription>{project.summary}</CardDescription>
           {project.status && (
             <CardAction>
-              <Badge variant={project.status === "live" ? "default" : "secondary"}>
-                {project.status === "live" ? "Live" : "In development"}
+              <Badge variant={statusVariant[project.status]}>
+                {statusLabel[project.status]}
               </Badge>
             </CardAction>
           )}
