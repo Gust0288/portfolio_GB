@@ -23,7 +23,7 @@ export const projects: Project[] = [
     problem:
       "Dansk Industri's membership signup was a manual, phone-based process that was slow for applicants and time-consuming for staff.",
     solution:
-      "A self-service portal with a dynamic wizard flow and automatic CVR lookup, plus a JWT-protected admin panel for case handling. Contract-first REST API and a full CI/CD pipeline with testing, vulnerability scanning and automated deploys.",
+      "A self-service portal with a 10-step wizard flow and automatic CVR lookup on the applicant side. On the staff side, a separate JWT-protected admin panel gives case handlers four views: an overview, a queue of pending applications, active registration sessions and a full activity log, plus an approve/reject workflow with free-text notes and automatic e-mail notifications to the applicant. Contract-first REST API and a full CI/CD pipeline with testing, vulnerability scanning and automated deploys.",
     outcome:
       "Delivered as my final bachelor project and running live in production for Dansk Industri. I designed and built the entire stack from scratch: frontend, backend, database and CI/CD pipeline.",
     tech: [
