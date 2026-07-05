@@ -96,7 +96,13 @@ export const projects: Project[] = [
     outcome:
       "In active development. The core booking flow and admin panel are being built out.",
     tech: ["React", "Chakra UI", "Express.js", "Node.js", "PostgreSQL"],
-    images: ["/images/projects/car-rental.svg"],
+    images: [
+      "/images/projects/car-rental/car-rental-1.png",
+      "/images/projects/car-rental/car-rental-2.png",
+      "/images/projects/car-rental/car-rental-3.png",
+      "/images/projects/car-rental/car-rental-4.png",
+      "/images/projects/car-rental/car-rental-5.png",
+    ],
     links: [
       { label: "GitHub", url: "https://github.com/Gust0288/car-rental-prj" },
     ],
