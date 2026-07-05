@@ -88,3 +88,11 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
 ];
+
+// Skills jeg er i gang med at lære, ikke fuldt selvstændige endnu.
+export const learningSkills: Skill[] = [
+  { name: "C#" },
+  { name: ".NET" },
+  { name: "ASP.NET Core" },
+  { name: "EF Core" },
+];

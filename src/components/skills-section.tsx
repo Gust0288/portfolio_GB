@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
+import { Sprout } from "lucide-react";
 
 import { Reveal } from "@/components/reveal";
 import { SpotlightCard } from "@/components/spotlight-card";
@@ -11,7 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { skillGroups, type Skill } from "@/data/skills";
+import { learningSkills, skillGroups, type Skill } from "@/data/skills";
 import { educationsForSkill, projectsUsingSkill } from "@/lib/skill-projects";
 import { cn } from "@/lib/utils";
 
@@ -146,6 +147,43 @@ export function SkillsSection() {
           </motion.div>
         ))}
       </div>
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-64px" }}
+        transition={{
+          duration: 0.5,
+          ease: "easeOut",
+          delay: skillGroups.length * 0.08,
+        }}
+        className="mt-4"
+      >
+        <SpotlightCard className="border border-dashed border-primary/30 p-5 ring-0">
+          <div className="flex items-center gap-2 text-foreground">
+            <Sprout className="size-4 text-primary" aria-hidden="true" />
+            <h3 className="text-sm font-medium tracking-wide uppercase">
+              Currently learning
+            </h3>
+          </div>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Picking up now for the .NET and C# projects above, not yet used
+            in production.
+          </p>
+          <motion.ul
+            variants={listVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-64px" }}
+            className="mt-4 flex flex-wrap gap-1.5"
+          >
+            {learningSkills.map((skill) => (
+              <motion.li key={skill.name} variants={itemVariants}>
+                <SkillBadge skill={skill} />
+              </motion.li>
+            ))}
+          </motion.ul>
+        </SpotlightCard>
+      </motion.div>
     </section>
   );
 }
