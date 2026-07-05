@@ -47,7 +47,7 @@ export function AboutSection() {
         <Reveal className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
           <p>
             I&apos;m a fullstack developer from Copenhagen, freshly graduated
-            from KEA&apos;s Web Development programme (June 2026). I came into
+            from EK&apos;s Web Development programme (June 2026). I came into
             code through multimedia design, and the combination stuck: I care
             about how things look and feel, but I want to build the whole
             thing: database, API and UI.
@@ -58,13 +58,16 @@ export function AboutSection() {
             healthcare app all the way to the App Store and Google Play. At
             Awork I worked on a case management system for a Danish public
             authority, and for my bachelor project I built a self-service
-            membership portal that Dansk Industri runs in production.
+            membership portal that Dansk Industri runs in production. That
+            range means I&apos;m just as comfortable owning one end of the
+            stack as the whole thing: mostly backend at Awork, mostly
+            frontend earlier at Social Vibes.
           </p>
           <p>
-            I&apos;m looking for a developer role in Copenhagen or elsewhere on
-            Zealand, and open to the wider Nordics, where I can keep shipping
-            real things with a team that takes both code quality and users
-            seriously.
+            I&apos;m looking for a developer role, fullstack, frontend or
+            backend, in Copenhagen or elsewhere on Zealand, and open to the
+            wider Nordics, where I can keep shipping real things with a team
+            that takes both code quality and users seriously.
           </p>
         </Reveal>
         <Reveal delay={0.1} className="space-y-8">
