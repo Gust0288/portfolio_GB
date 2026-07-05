@@ -147,7 +147,7 @@ export const projects: Project[] = [
       "I want my budgets and recurring expenses to live somewhere better than a spreadsheet, and I want a meaty, real domain to learn the .NET stack properly.",
     solution:
       "The plan: a REST API built with ASP.NET Core and EF Core on PostgreSQL. Accounts, categories, budgets and recurring expenses, JWT auth, and tests and CI from the first commit.",
-    tech: ["C#", "ASP.NET Core", "EF Core", "PostgreSQL"],
+    tech: ["C#", ".NET", "ASP.NET Core", "EF Core", "PostgreSQL"],
     images: ["/images/projects/finance-api.svg"],
     links: [],
     status: "in-development",
