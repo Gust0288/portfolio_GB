@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: "Bachelor Project: Digital Membership Portal for Dansk Industri (DI)",
     shortTitle: "DI Membership Portal",
     summary:
-      "My final bachelor project (PBA Web Development, KEA, June 2026). A self-service membership portal for Dansk Industri, replacing a manual phone-based signup process, built end-to-end and running in production.",
+      "My final bachelor project (PBA Web Development, EK, June 2026). A self-service membership portal for Dansk Industri, replacing a manual phone-based signup process, built end-to-end and running in production.",
     problem:
       "Dansk Industri's membership signup was a manual, phone-based process that was slow for applicants and time-consuming for staff.",
     solution:

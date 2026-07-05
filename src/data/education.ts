@@ -13,7 +13,7 @@ export const educations: Education[] = [
   {
     slug: "web-development-pba",
     degree: "Web Development (PBA)",
-    school: "KEA, Copenhagen School of Design and Technology",
+    school: "EK, Copenhagen School of Design and Technology",
     period: "Completed June 2026",
     summary: "Professional bachelor top-up in fullstack web development.",
     description:
@@ -30,7 +30,7 @@ export const educations: Education[] = [
   {
     slug: "multimedia-design-ap",
     degree: "Multimedia Design (AP)",
-    school: "KEA, Copenhagen School of Design and Technology",
+    school: "EK, Copenhagen School of Design and Technology",
     period: "Completed 2024",
     summary: "Two-year AP degree in design and frontend development.",
     description:

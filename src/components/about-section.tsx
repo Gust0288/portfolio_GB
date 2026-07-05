@@ -47,7 +47,7 @@ export function AboutSection() {
         <Reveal className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
           <p>
             I&apos;m a fullstack developer from Copenhagen, freshly graduated
-            from KEA&apos;s Web Development programme (June 2026). I came into
+            from EK&apos;s Web Development programme (June 2026). I came into
             code through multimedia design, and the combination stuck: I care
             about how things look and feel, but I want to build the whole
             thing: database, API and UI.
