@@ -41,7 +41,7 @@ function RotatingRole() {
         variants={item}
         className="relative mt-3 h-8 text-xl font-medium text-primary sm:h-9 sm:text-2xl"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.span
             key={roleIndex}
             initial={{ opacity: 0, y: 8 }}
