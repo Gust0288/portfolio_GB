@@ -107,7 +107,7 @@ export function HeroSection() {
         style={{
           opacity: "var(--spot-opacity, 0)",
           background:
-            "radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%)",
+            "radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), oklch(from var(--primary) l c h / 0.16), oklch(from var(--primary) l c h / 0) 70%)",
         }}
       />
 
