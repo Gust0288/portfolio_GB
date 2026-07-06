@@ -1,9 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { ArrowDown, ArrowRight, Mail } from "lucide-react";
-import { motion, type Variants } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion/react";
 
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { Magnetic } from "@/components/magnetic";
+import { TechTicker } from "@/components/tech-ticker";
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
 
@@ -21,19 +24,64 @@ const item: Variants = {
   },
 };
 
+function RotatingRole() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const id = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % site.roles.length);
+    }, 2800);
+    return () => clearInterval(id);
+  }, [prefersReducedMotion]);
+
+  return (
+    <>
+      <motion.div
+        variants={item}
+        className="relative mt-3 h-8 text-xl font-medium text-primary sm:h-9 sm:text-2xl"
+      >
+        <AnimatePresence>
+          <motion.span
+            key={roleIndex}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="absolute inset-0 flex items-center whitespace-nowrap"
+          >
+            {site.roles[roleIndex]}
+          </motion.span>
+        </AnimatePresence>
+      </motion.div>
+      <span className="sr-only">
+        Open to fullstack, frontend, or backend developer roles.
+      </span>
+    </>
+  );
+}
+
 export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative flex min-h-[calc(100svh-3.5rem)] flex-col justify-center py-16"
+      className="relative flex min-h-[calc(100svh-3.5rem)] flex-col justify-center overflow-hidden py-16"
     >
-      {/* Soft accent glow behind the hero */}
-      <div
+      {/* Ambient background glow, drifts on its own */}
+      <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 flex justify-center overflow-visible blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 flex justify-center blur-3xl"
+        animate={{ x: ["-2%", "2%", "-2%"], scale: [1, 1.08, 1] }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+          repeatType: "mirror",
+        }}
       >
         <div className="h-96 w-full max-w-4xl rounded-full bg-gradient-to-tr from-primary/20 via-primary/8 to-transparent" />
-      </div>
+      </motion.div>
 
       <motion.div variants={container} initial="hidden" animate="visible">
         <motion.p variants={item}>
@@ -52,12 +100,7 @@ export function HeroSection() {
         >
           {site.name}
         </motion.h1>
-        <motion.p
-          variants={item}
-          className="mt-3 text-xl font-medium text-primary sm:text-2xl"
-        >
-          {site.role}
-        </motion.p>
+        <RotatingRole />
         <motion.p
           variants={item}
           className="mt-6 max-w-2xl text-lg leading-relaxed text-pretty text-muted-foreground sm:text-xl"
@@ -68,42 +111,59 @@ export function HeroSection() {
           variants={item}
           className="mt-10 flex flex-wrap items-center gap-3"
         >
-          <Button size="lg" nativeButton={false} render={<a href="#projects" />}>
-            View projects
-            <ArrowRight aria-hidden="true" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            nativeButton={false}
-            render={
-              <a href={site.github} target="_blank" rel="noopener noreferrer" />
-            }
-          >
-            <GitHubIcon />
-            GitHub
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            nativeButton={false}
-            render={
-              <a href={site.linkedin} target="_blank" rel="noopener noreferrer" />
-            }
-          >
-            <LinkedInIcon />
-            LinkedIn
-          </Button>
-          <Button
-            variant="ghost"
-            size="lg"
-            nativeButton={false}
-            render={<a href={`mailto:${site.email}`} />}
-          >
-            <Mail aria-hidden="true" />
-            {site.email}
-          </Button>
+          <Magnetic>
+            <Button size="lg" nativeButton={false} render={<a href="#projects" />}>
+              View projects
+              <ArrowRight aria-hidden="true" />
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button
+              variant="outline"
+              size="lg"
+              nativeButton={false}
+              render={
+                <a href={site.github} target="_blank" rel="noopener noreferrer" />
+              }
+            >
+              <GitHubIcon />
+              GitHub
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button
+              variant="outline"
+              size="lg"
+              nativeButton={false}
+              render={
+                <a href={site.linkedin} target="_blank" rel="noopener noreferrer" />
+              }
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button
+              variant="ghost"
+              size="lg"
+              nativeButton={false}
+              render={<a href={`mailto:${site.email}`} />}
+            >
+              <Mail aria-hidden="true" />
+              {site.email}
+            </Button>
+          </Magnetic>
         </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="absolute inset-x-0 bottom-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <TechTicker />
       </motion.div>
 
       <motion.div
