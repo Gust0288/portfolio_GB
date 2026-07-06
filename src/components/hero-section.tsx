@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion
 
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Magnetic } from "@/components/magnetic";
+import { TechTicker } from "@/components/tech-ticker";
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
 
@@ -183,6 +184,15 @@ export function HeroSection() {
             </Button>
           </Magnetic>
         </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="absolute inset-x-0 bottom-16"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.6 }}
+      >
+        <TechTicker />
       </motion.div>
 
       <motion.div
