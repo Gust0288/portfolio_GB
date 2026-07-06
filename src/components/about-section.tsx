@@ -46,8 +46,8 @@ export function AboutSection() {
       <div className="mt-6 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <Reveal className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
           <p>
-            I&apos;m a fullstack developer from Copenhagen, freshly graduated
-            from EK&apos;s Web Development programme (June 2026). I came into
+            I&apos;m a fullstack developer from Copenhagen with a
+            bachelor&apos;s degree in Web Development from EK. I came into
             code through multimedia design, and the combination stuck: I care
             about how things look and feel, but I want to build the whole
             thing: database, API and UI.
