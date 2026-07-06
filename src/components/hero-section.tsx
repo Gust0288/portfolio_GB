@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDown, ArrowRight, Mail } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion/react";
 
@@ -63,27 +63,9 @@ function RotatingRole() {
 }
 
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  function handleSpotlightMove(event: MouseEvent<HTMLElement>) {
-    const el = sectionRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    el.style.setProperty("--spot-x", `${event.clientX - rect.left}px`);
-    el.style.setProperty("--spot-y", `${event.clientY - rect.top}px`);
-    el.style.setProperty("--spot-opacity", "1");
-  }
-
-  function handleSpotlightLeave() {
-    sectionRef.current?.style.setProperty("--spot-opacity", "0");
-  }
-
   return (
     <section
-      ref={sectionRef}
       aria-labelledby="hero-heading"
-      onMouseMove={handleSpotlightMove}
-      onMouseLeave={handleSpotlightLeave}
       className="relative flex min-h-[calc(100svh-3.5rem)] flex-col justify-center overflow-hidden py-16"
     >
       {/* Ambient background glow, drifts on its own */}
@@ -100,17 +82,6 @@ export function HeroSection() {
       >
         <div className="h-96 w-full max-w-4xl rounded-full bg-gradient-to-tr from-primary/20 via-primary/8 to-transparent" />
       </motion.div>
-
-      {/* Cursor-reactive spotlight */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 transition-opacity duration-300"
-        style={{
-          opacity: "var(--spot-opacity, 0)",
-          background:
-            "radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), oklch(from var(--primary) l c h / 0.16), oklch(from var(--primary) l c h / 0) 70%)",
-        }}
-      />
 
       <motion.div variants={container} initial="hidden" animate="visible">
         <motion.p variants={item}>
