@@ -13,7 +13,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { learningSkills, skillGroups, type Skill } from "@/data/skills";
-import { educationsForSkill, projectsUsingSkill } from "@/lib/skill-projects";
+import {
+  educationsForSkill,
+  experiencesForSkill,
+  projectsUsingSkill,
+} from "@/lib/skill-projects";
 import { cn } from "@/lib/utils";
 
 const listVariants: Variants = {
@@ -33,8 +37,10 @@ const itemVariants: Variants = {
 
 function SkillBadge({ skill }: { skill: Skill }) {
   const linkedProjects = projectsUsingSkill(skill);
+  const linkedExperiences = experiencesForSkill(skill);
   const linkedEducations = educationsForSkill(skill);
-  const linkCount = linkedProjects.length + linkedEducations.length;
+  const linkCount =
+    linkedProjects.length + linkedExperiences.length + linkedEducations.length;
 
   if (linkCount === 0) {
     return <Badge variant="outline">{skill.name}</Badge>;
@@ -71,6 +77,26 @@ function SkillBadge({ skill }: { skill: Skill }) {
                     className="text-sm text-foreground underline-offset-4 hover:text-primary hover:underline"
                   >
                     {project.shortTitle ?? project.title}
+                  </PopoverClose>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {linkedExperiences.length > 0 && (
+          <div>
+            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+              From my experience
+            </p>
+            <ul className="mt-1 space-y-1">
+              {linkedExperiences.map((experience) => (
+                <li key={experience.slug}>
+                  <PopoverClose
+                    nativeButton={false}
+                    render={<a href={`#exp-${experience.slug}`} />}
+                    className="text-sm text-foreground underline-offset-4 hover:text-primary hover:underline"
+                  >
+                    {experience.role} · {experience.org}
                   </PopoverClose>
                 </li>
               ))}

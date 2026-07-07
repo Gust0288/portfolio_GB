@@ -1,4 +1,5 @@
 import { educations, type Education } from "@/data/education";
+import { experiences, type Experience } from "@/data/experience";
 import { projects, type Project } from "@/data/projects";
 import type { Skill } from "@/data/skills";
 
@@ -24,5 +25,13 @@ export function educationsForSkill(skill: Skill): Education[] {
   if (!skill.education?.length) return [];
   return educations.filter((education) =>
     skill.education!.includes(education.slug)
+  );
+}
+
+// Finder den erhvervserfaring hvor en skill er brugt.
+export function experiencesForSkill(skill: Skill): Experience[] {
+  if (!skill.experience?.length) return [];
+  return experiences.filter((experience) =>
+    skill.experience!.includes(experience.slug)
   );
 }

@@ -8,6 +8,8 @@ export type Skill = {
   keywords?: string[];
   /** Uddannelser (slugs fra education.ts) skillen stammer fra. */
   education?: string[];
+  /** Erhvervserfaring (slugs fra experience.ts) hvor skillen er brugt. */
+  experience?: string[];
 };
 
 export type SkillGroup = {
@@ -28,18 +30,25 @@ export const skillGroups: SkillGroup[] = [
         name: "CSS (Tailwind, Bootstrap)",
         keywords: ["tailwind", "bootstrap", "css"],
         education: ["multimedia-design-ap", "web-development-pba"],
+        experience: ["awork"],
       },
       {
         name: "JavaScript",
         keywords: [],
         education: ["multimedia-design-ap", "web-development-pba"],
       },
-      { name: "TypeScript" },
+      { name: "TypeScript", experience: ["awork"] },
       { name: "React" },
       { name: "Next.js", education: ["web-development-pba"] },
-      { name: "Nuxt.js", education: ["web-development-pba"] },
-      { name: "Angular" },
+      { name: "Nuxt.js", education: ["web-development-pba"], experience: ["awork"] },
+      { name: "Angular", experience: ["social-vibes-junior"] },
       { name: "Vite" },
+      {
+        name: "Vue.js",
+        education: ["web-development-pba"],
+        experience: ["awork"],
+      },
+      { name: "Ionic", experience: ["social-vibes-junior"] },
       { name: "Electron" },
       {
         name: "UX/UI principles",
@@ -58,6 +67,7 @@ export const skillGroups: SkillGroup[] = [
         name: "PHP (Laravel)",
         keywords: ["laravel", "php"],
         education: ["web-development-pba"],
+        experience: ["awork"],
       },
     ],
   },
@@ -68,7 +78,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "MySQL", education: ["web-development-pba"] },
       { name: "SQLite", education: ["web-development-pba"] },
       { name: "MongoDB", education: ["web-development-pba"] },
-      { name: "Neo4j" },
+      { name: "Neo4j", experience: ["social-vibes-junior"] },
     ],
   },
   {

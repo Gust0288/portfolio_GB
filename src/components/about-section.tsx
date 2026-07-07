@@ -8,29 +8,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { educations } from "@/data/education";
-
-const experience = [
-  {
-    role: "Fullstack Developer Intern",
-    org: "Awork A/S",
-    period: "Jan – May 2026",
-    description:
-      "Case management system for a Danish public authority, built with a PHP/Laravel backend and a Nuxt.js, TypeScript and Tailwind frontend.",
-  },
-  {
-    role: "Junior Developer",
-    org: "Social Vibes",
-    period: "Oct 2024 – Aug 2025",
-    description:
-      "Built the IBDI healthcare app and the Social Vibes app with Angular 19, Ionic and Neo4j. IBDI shipped to both app stores.",
-  },
-  {
-    role: "Frontend Intern",
-    org: "Social Vibes",
-    period: "Aug – Oct 2024",
-    description: "First step into professional development work.",
-  },
-];
+import { experiences } from "@/data/experience";
 
 export function AboutSection() {
   return (
@@ -76,8 +54,12 @@ export function AboutSection() {
               Experience
             </h3>
             <ol className="mt-3 space-y-4">
-              {experience.map((item) => (
-                <li key={`${item.role}-${item.period}`}>
+              {experiences.map((item) => (
+                <li
+                  key={item.slug}
+                  id={`exp-${item.slug}`}
+                  className="-m-2 scroll-mt-24 rounded-lg p-2 target:ring-2 target:ring-primary/50"
+                >
                   <p className="font-medium text-foreground">
                     {item.role} · {item.org}
                   </p>
