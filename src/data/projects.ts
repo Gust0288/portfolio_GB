@@ -19,13 +19,13 @@ export const projects: Project[] = [
     title: "Bachelor Project: Digital Membership Portal for Dansk Industri (DI)",
     shortTitle: "DI Membership Portal",
     summary:
-      "My final bachelor project (PBA Web Development, EK, June 2026). A self-service membership portal for Dansk Industri, replacing a manual phone-based signup process, built end-to-end and running in production.",
+      "My final bachelor project (PBA Web Development, EK, June 2026). A self-service membership portal for Dansk Industri, replacing a manual phone-based signup process, built end-to-end and deployed live.",
     problem:
       "Dansk Industri's membership signup was a manual, phone-based process that was slow for applicants and time-consuming for staff.",
     solution:
       "A self-service portal with a 10-step wizard flow and automatic CVR lookup on the applicant side. On the staff side, a separate JWT-protected admin panel gives case handlers four views: an overview, a queue of pending applications, active registration sessions and a full activity log, plus an approve/reject workflow with free-text notes and automatic e-mail notifications to the applicant. Contract-first REST API and a full CI/CD pipeline with testing, vulnerability scanning and automated deploys.",
     outcome:
-      "Delivered as my final bachelor project and running live in production for Dansk Industri. I designed and built the entire stack from scratch: frontend, backend, database and CI/CD pipeline.",
+      "Delivered as my final bachelor project and deployed live end-to-end. I designed and built the entire stack from scratch: frontend, backend, database and CI/CD pipeline.",
     tech: [
       "React",
       "TypeScript",
