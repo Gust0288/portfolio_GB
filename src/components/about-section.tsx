@@ -36,8 +36,8 @@ export function AboutSection() {
             healthcare app all the way to the App Store and Google Play. At
             Awork I worked on a case management system for a Danish public
             authority, and for my bachelor project I built a self-service
-            membership portal that Dansk Industri runs in production. That
-            range means I&apos;m just as comfortable owning one end of the
+            membership portal for Dansk Industri, deployed live end-to-end.
+            That range means I&apos;m just as comfortable owning one end of the
             stack as the whole thing: mostly backend at Awork, mostly
             frontend earlier at Social Vibes.
           </p>
